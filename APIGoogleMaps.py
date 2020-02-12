@@ -17,13 +17,26 @@ def CalculoDeDistanciasAtéMetro(Origem):
         ArraydeDistancia.append(Distancia)
         ArraydeDuração.append(Duracao)
         ArraydeNomes.append(l_origem['name'])
-
-    MenorDistancia = ArraydeDistancia.index(min(ArraydeDistancia))
-    menorDuração = ArraydeDuração.index(min(ArraydeDuração))
-
-    print(ArraydeNomes[menorDuração])
-    print(ArraydeNomes[MenorDistancia])
-
+    def values():
+        global IndexMenorDistancia
+        IndexMenorDistancia = ArraydeDistancia.index(min(ArraydeDistancia))
+        global IndexArraymenorDuração
+        IndexArraymenorDuração = ArraydeDuração.index(min(ArraydeDuração))
+        global MetroMaisProximo
+        MetroMaisProximo = ArraydeNomes[IndexArraymenorDuração]
+        global MetroMaisRapido
+        MetroMaisRapido = ArraydeNomes[IndexMenorDistancia]
+        global DistanciaMetro
+        DistanciaMetro = ArraydeDistancia[IndexMenorDistancia]
+        global MetroRapido
+        MetroRapido = ArraydeDistancia[IndexArraymenorDuração]
+        
+    values()
+        
+    ArraydeDuração.clear()
+    ArraydeNomes.clear()
+    ArraydeDistancia.clear()
+    
 
 
 
