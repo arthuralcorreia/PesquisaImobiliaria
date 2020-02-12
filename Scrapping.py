@@ -6,15 +6,16 @@ import csv
 
 i = 1
 M = 1
+csv_file = open('ResultadosDaPesquisa.csv', 'w')
+csv_writer = csv.writer(csv_file)
+csv_writer.writerow(['Título','Link', 'Endereço', 'Especificações', 'Observações', 'Preço', 'Metrô mais próximo', 'Metrõ mais Rapido', 'Distancia', 'Duração'])
 
 for j in range(1000):
 
     page = requests.get('https://www.imovelweb.com.br/apartamentos-venda-sao-paulo-sp-menos-400000-reales-pagina-'+ str(j) +'.html')
     html_soup = BeautifulSoup(page.text, 'html.parser')
 
-    csv_file = open('ResultadosDaPesquisa.csv', 'w')
-    csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Título','Link', 'Endereço', 'Especificações', 'Observações', 'Preço', 'Metrô mais próximo', 'Metrõ mais Rapido', 'Distancia', 'Duração'])
+    
 
     for ape_container in html_soup.find_all('div', class_ = 'posting-card super-highlighted'):
 
@@ -37,6 +38,8 @@ for j in range(1000):
         csv_writer.writerow([Titulo, url, Endereco_Limpo, Especificacoes_limpas, observações, preco, MetroMaisProxímo, MetroMaisRapido, DistanciaDoMetro, RapidezaoMetro])
         
         print("\n")
+        print("***********")
+        print(Titulo + "\n" + url  + "\n" +  Endereco_Limpo  + "\n" + Especificacoes_limpas + "\n" +  observações + "\n" +  preco + "\n" +  MetroMaisProxímo + "\n" +  MetroMaisRapido + "\n" +  DistanciaDoMetro + "\n" +  RapidezaoMetro)             
         print("*************")
         print(str(i) + " pesquisas concluidas")
         print("_____________")
