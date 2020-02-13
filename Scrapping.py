@@ -39,7 +39,7 @@ for j in range(1000):
         
         print("\n")
         print("***********")
-        print(Titulo + "\n" + url  + "\n" +  Endereco_Limpo  + "\n" + Especificacoes_limpas + "\n" +  observações + "\n" +  preco + "\n" +  MetroMaisProxímo + "\n" +  MetroMaisRapido + "\n" +  DistanciaDoMetro + "\n" +  RapidezaoMetro)             
+        # print(Titulo + "\n" + url  + "\n" +  Endereco_Limpo  + "\n" + Especificacoes_limpas + "\n" +  observações + "\n" +  preco + "\n" +  MetroMaisProxímo + "\n" +  MetroMaisRapido + "\n" +  DistanciaDoMetro + "\n" +  RapidezaoMetro)             
         print("*************")
         print(str(i) + " pesquisas concluidas")
         print("_____________")
