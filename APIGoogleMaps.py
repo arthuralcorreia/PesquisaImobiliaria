@@ -1,7 +1,7 @@
 import googlemaps
 import pandas as pd
 
-gmaps = googlemaps.Client(key='AIzaSyBZFny6JOecPZm0BLk63zeCPnfnApdbxSw')
+gmaps = googlemaps.Client(key='')
 
 origem = pd.read_excel('sao-paulo-metro/Book7.xlsx')
 
